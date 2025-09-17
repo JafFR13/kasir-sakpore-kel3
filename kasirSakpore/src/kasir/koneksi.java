@@ -15,9 +15,9 @@ if(postgreKonek == null || postgreKonek.isClosed()){
     try{
                 DriverManager.registerDriver(new org.postgresql.Driver());
 
-        String db = "jdbc:postgresql://localhost:5432/db_resto";
+        String db = "jdbc:postgresql://localhost:5432/sakpore";
         String user = "postgres";
-        String pass = "1234";
+        String pass = "12345678";
         postgreKonek = (Connection)DriverManager.getConnection(db,user,pass);
     }catch(Exception e)
     {
