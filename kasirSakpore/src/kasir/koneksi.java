@@ -17,7 +17,7 @@ if(postgreKonek == null || postgreKonek.isClosed()){
 
         String db = "jdbc:postgresql://localhost:5432/sakpore";
         String user = "postgres";
-        String pass = "12345678";
+        String pass = "1234";
         postgreKonek = (Connection)DriverManager.getConnection(db,user,pass);
     }catch(Exception e)
     {
