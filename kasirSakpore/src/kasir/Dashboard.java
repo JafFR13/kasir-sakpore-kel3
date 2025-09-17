@@ -4,6 +4,7 @@
  */
 package kasir;
 
+
 import java.awt.BorderLayout;
 
 
@@ -33,6 +34,7 @@ public class Dashboard extends javax.swing.JFrame {
         navbar = new javax.swing.JPanel();
         sidebar = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         panelUtama = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
 
@@ -64,13 +66,22 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("jButton1");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jButton1)
+                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         sidebarLayout.setVerticalGroup(
@@ -78,12 +89,20 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGap(235, 235, 235)
                 .addComponent(jButton1)
+<<<<<<< HEAD
+=======
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+>>>>>>> 3d9b1f9b4fc0bed0d4b60b1f854665c42ef1c774
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelUtama.setPreferredSize(new java.awt.Dimension(1740, 920));
         panelUtama.setLayout(new java.awt.BorderLayout());
+<<<<<<< HEAD
         panelUtama.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+=======
+>>>>>>> 3d9b1f9b4fc0bed0d4b60b1f854665c42ef1c774
 
         javax.swing.GroupLayout panelBgLayout = new javax.swing.GroupLayout(panelBg);
         panelBg.setLayout(panelBgLayout);
@@ -132,6 +151,13 @@ public class Dashboard extends javax.swing.JFrame {
     panelUtama.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+panelUtama.removeAll(); // bersihkan dulu
+        KelolaUser kuser = new KelolaUser(); // panggil panel Admin
+        panelUtama.add(kuser);
+        panelUtama.revalidate();
+        panelUtama.repaint();      }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,7 +195,11 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane1;
+=======
+    private javax.swing.JButton jButton2;
+>>>>>>> 3d9b1f9b4fc0bed0d4b60b1f854665c42ef1c774
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel panelBg;
     private javax.swing.JPanel panelUtama;
