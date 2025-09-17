@@ -7,18 +7,24 @@ import java.sql.*;
 import javax.swing.*;
 
 
-public class koneksi {
-    private static Connection conn;
-    public static Connection dbKonek() throws SQLException{
-        if(conn == null){
-            try{
-        String db = "jdbc:mysql://localhost:3306/kasir";
-        String user = "root";
-        String pass = "";
-        conn = (Connection)DriverManager.getConnection(db,user,pass);
-    }catch(Exception e){
-         JOptionPane.showMessageDialog(null, "Koneksi Gagal: " + e.getMessage());
-                e.printStackTrace();
+
+public class koneksi{
+private static Connection postgreKonek;
+public static Connection dbKonek()throws SQLException {
+if(postgreKonek == null || postgreKonek.isClosed()){
+    try{
+                DriverManager.registerDriver(new org.postgresql.Driver());
+
+        String db = "jdbc:postgresql://localhost:5432/db_resto";
+        String user = "postgres";
+        String pass = "1234";
+        postgreKonek = (Connection)DriverManager.getConnection(db,user,pass);
+    }catch(Exception e)
+    {
+    e.printStackTrace();
     }
-        }return conn;
-    }}
+    
+}return postgreKonek;
+}
+    
+}
