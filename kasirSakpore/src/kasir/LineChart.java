@@ -68,8 +68,11 @@ protected void paintComponent(Graphics g) {
     int h = getHeight();
 
     // Background gradien
-    GradientPaint gp = new GradientPaint(0, 0, new Color(200, 255, 200),
-                                         0, h, new Color(255, 255, 200));
+GradientPaint gp = new GradientPaint(
+    0, 0, Color.white,   // biru muda (lightblue)
+    0, h, new Color(135, 206, 250)        // biru tua (darkblue)
+);
+
     g2.setPaint(gp);
     g2.fillRect(0, 0, w, h);
 
@@ -125,7 +128,7 @@ protected void paintComponent(Graphics g) {
         }
 
         // gambar garis pemasukan (biru)
-        g2.setColor(Color.BLUE);
+        g2.setColor(Color.GREEN);
         g2.setStroke(new BasicStroke(2f));
         for (int i = 0; i < pemasukanPoints.size() - 1; i++) {
             g2.drawLine(pemasukanPoints.get(i).x, pemasukanPoints.get(i).y,
@@ -141,7 +144,7 @@ protected void paintComponent(Graphics g) {
         }
 
         // titik pemasukan (biru)
-        g2.setColor(Color.BLUE);
+g2.setColor(new Color(0, 100, 0));  // Dark Green
         for (Point p : pemasukanPoints) {
             g2.fillOval(p.x - 3, p.y - 3, 6, 6);
         }

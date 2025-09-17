@@ -4,13 +4,9 @@
  */
 package kasir;
 
-
-import java.awt.BorderLayout;
-
-
 /**
  *
- * @author user
+ * @author yaniyan
  */
 public class Dashboard extends javax.swing.JFrame {
 
@@ -30,46 +26,28 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelBg = new javax.swing.JPanel();
-        navbar = new javax.swing.JPanel();
         sidebar = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAdmin = new javax.swing.JButton();
+        btnKuser = new javax.swing.JButton();
+        navbar = new javax.swing.JPanel();
         panelUtama = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panelBg.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        sidebar.setBackground(new java.awt.Color(252, 250, 246));
+        sidebar.setPreferredSize(new java.awt.Dimension(1920, 150));
 
-        navbar.setBackground(new java.awt.Color(153, 255, 153));
-        navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
-
-        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
-        navbar.setLayout(navbarLayout);
-        navbarLayout.setHorizontalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
-        );
-        navbarLayout.setVerticalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-
-        sidebar.setBackground(new java.awt.Color(0, 204, 0));
-        sidebar.setPreferredSize(new java.awt.Dimension(150, 920));
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAdmin.setText("AdminDashBoard");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAdminActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnKuser.setText("KelolaUser");
+        btnKuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnKuserActionPerformed(evt);
             }
         });
 
@@ -78,85 +56,81 @@ public class Dashboard extends javax.swing.JFrame {
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap()
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKuser, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                .addContainerGap())
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addGap(235, 235, 235)
-                .addComponent(jButton1)
-<<<<<<< HEAD
-=======
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
->>>>>>> 3d9b1f9b4fc0bed0d4b60b1f854665c42ef1c774
+                .addGap(37, 37, 37)
+                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKuser, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 920));
-        panelUtama.setLayout(new java.awt.BorderLayout());
-<<<<<<< HEAD
-        panelUtama.add(jScrollPane1, java.awt.BorderLayout.CENTER);
-=======
->>>>>>> 3d9b1f9b4fc0bed0d4b60b1f854665c42ef1c774
+        navbar.setBackground(new java.awt.Color(41, 56, 77));
+        navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
 
-        javax.swing.GroupLayout panelBgLayout = new javax.swing.GroupLayout(panelBg);
-        panelBg.setLayout(panelBgLayout);
-        panelBgLayout.setHorizontalGroup(
-            panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(panelBgLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
+        navbar.setLayout(navbarLayout);
+        navbarLayout.setHorizontalGroup(
+            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        panelBgLayout.setVerticalGroup(
-            panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBgLayout.createSequentialGroup()
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
-                    .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)))
+        navbarLayout.setVerticalGroup(
+            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 114, Short.MAX_VALUE)
         );
+
+        panelUtama.setBackground(new java.awt.Color(255, 255, 255));
+        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
+        panelUtama.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(navbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1945, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
+                    .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     panelUtama.removeAll(); // kosongkan panelUtama dulu
+    private void btnKuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKuserActionPerformed
+ panelUtama.removeAll();                
+    KelolaUser kuser = new KelolaUser();        
+    panelUtama.add(kuser); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();           // TODO add your handling code here:
+    }//GEN-LAST:event_btnKuserActionPerformed
 
-    Admin adminPanel = new Admin(); // buat instance panel Admin
-    
-    panelUtama.setLayout(new BorderLayout());
-    panelUtama.add(adminPanel, BorderLayout.CENTER);
-
-    panelUtama.revalidate();
-    panelUtama.repaint();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-panelUtama.removeAll(); // bersihkan dulu
-        KelolaUser kuser = new KelolaUser(); // panggil panel Admin
-        panelUtama.add(kuser);
-        panelUtama.revalidate();
-        panelUtama.repaint();      }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+ panelUtama.removeAll();                
+    Admin adminPanel = new Admin();        
+    panelUtama.add(adminPanel); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();           // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,14 +168,9 @@ panelUtama.removeAll(); // bersihkan dulu
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-<<<<<<< HEAD
-    private javax.swing.JScrollPane jScrollPane1;
-=======
-    private javax.swing.JButton jButton2;
->>>>>>> 3d9b1f9b4fc0bed0d4b60b1f854665c42ef1c774
+    private javax.swing.JButton btnAdmin;
+    private javax.swing.JButton btnKuser;
     private javax.swing.JPanel navbar;
-    private javax.swing.JPanel panelBg;
     private javax.swing.JPanel panelUtama;
     private javax.swing.JPanel sidebar;
     // End of variables declaration//GEN-END:variables

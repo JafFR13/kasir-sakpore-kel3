@@ -56,11 +56,13 @@ public class Admin extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         panelChart = new javax.swing.JPanel();
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(1740, 920));
+        setPreferredSize(new java.awt.Dimension(1720, 960));
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1720, 960));
         jScrollPane1.setRequestFocusEnabled(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1740, 920));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1720, 960));
         jPanel1.setRequestFocusEnabled(false);
 
         panelChart.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,17 +73,17 @@ public class Admin extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(panelChart, javax.swing.GroupLayout.PREFERRED_SIZE, 1682, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(panelChart, javax.swing.GroupLayout.PREFERRED_SIZE, 1632, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(501, Short.MAX_VALUE)
+                .addContainerGap(402, Short.MAX_VALUE)
                 .addComponent(panelChart, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(148, 148, 148))
         );
 
         jScrollPane1.setViewportView(jPanel1);

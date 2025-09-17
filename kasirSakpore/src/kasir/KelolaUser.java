@@ -106,6 +106,8 @@ public class KelolaUser extends javax.swing.JPanel {
         btDelete = new javax.swing.JButton();
         btEdit = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(1720, 960));
+        setPreferredSize(new java.awt.Dimension(1720, 960));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
