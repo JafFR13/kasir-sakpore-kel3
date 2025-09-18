@@ -3,19 +3,55 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package kasir;
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JPanel;
 
-/**
- *
- * @author yaniyan
- */
 public class Dashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Dashboard
-     */
     public Dashboard() {
         initComponents();
+
+        // navbar gradasi navy (kiri) → biru muda (kanan)
+        applyGradient(navbar, new Color(0, 0, 128), new Color(0, 0, 200), true);
+
+        // sidebar gradasi ungu gelap (atas) → ungu muda (bawah)
+        applyGradient(sidebar, new Color(51, 0, 102), new Color(51, 0, 255), false);
     }
+
+    /**
+     * @param panel panel yang mau diwarnai
+     * @param c1 warna awal
+     * @param c2 warna akhir
+     * @param horizontal true = kiri→kanan, false = atas→bawah
+     */
+    private void applyGradient(JPanel panel, Color c1, Color c2, boolean horizontal) {
+        panel.setOpaque(false);
+        panel.setUI(new javax.swing.plaf.PanelUI() {
+            @Override
+            public void update(Graphics g, javax.swing.JComponent c) {
+                Graphics2D g2d = (Graphics2D) g;
+                int w = c.getWidth();
+                int h = c.getHeight();
+
+                GradientPaint gp;
+                if (horizontal) {
+                    gp = new GradientPaint(0, 0, c1, w, 0, c2); // kiri → kanan
+                } else {
+                    gp = new GradientPaint(0, 0, c1, 0, h, c2); // atas → bawah
+                }
+
+                g2d.setPaint(gp);
+                g2d.fillRect(0, 0, w, h);
+
+                super.update(g, c);
+            }
+        });
+    }
+
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -121,7 +157,7 @@ public class Dashboard extends javax.swing.JFrame {
     KelolaUser kuser = new KelolaUser();        
     panelUtama.add(kuser); 
     panelUtama.revalidate();               
-    panelUtama.repaint();           // TODO add your handling code here:
+    panelUtama.repaint();           
     }//GEN-LAST:event_btnKuserActionPerformed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
@@ -129,7 +165,7 @@ public class Dashboard extends javax.swing.JFrame {
     Admin adminPanel = new Admin();        
     panelUtama.add(adminPanel); 
     panelUtama.revalidate();               
-    panelUtama.repaint();           // TODO add your handling code here:
+    panelUtama.repaint();          
     }//GEN-LAST:event_btnAdminActionPerformed
 
     /**
