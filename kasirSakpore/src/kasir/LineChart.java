@@ -10,11 +10,15 @@ import java.util.*;
 public class LineChart extends JPanel {
 
     private java.util.List<DataPoint> dataList = new ArrayList<>();
-    private java.util.List<PointData> pointList = new ArrayList<>(); // untuk simpan koordinat titik
+    private java.util.List<PointData> pointList = new ArrayList<>();
+    private String startDate; 
+    private String endDate;   
 
-    public LineChart() {
+    public LineChart(String startDate, String endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
         loadData();
-setBackground(Color.WHITE); // di constructor LineChart()
+        setBackground(Color.WHITE);
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -34,63 +38,70 @@ setBackground(Color.WHITE); // di constructor LineChart()
         });
     }
 
-    // ambil data dari database
-    private void loadData() {
-        String sql = "SELECT tanggal, SUM(masuk) as total_masuk, SUM(keluar) as total_keluar "
-                   + "FROM keuangan GROUP BY tanggal ORDER BY tanggal ASC";
+  private void loadData() {
+    String sql = "SELECT gs::date AS tgl, " +
+                 "COALESCE(SUM(k.masuk),0) AS total_masuk, " +
+                 "COALESCE(SUM(k.keluar),0) AS total_keluar " +
+                 "FROM generate_series(?::date, ?::date, interval '1 day') gs " +
+                 "LEFT JOIN keuangan k ON k.tanggal::date = gs::date " +
+                 "GROUP BY gs ORDER BY gs";
 
-        try (Connection conn = koneksi.dbKonek();
-             PreparedStatement pst = conn.prepareStatement(sql);
-             ResultSet rs = pst.executeQuery()) {
+    try (Connection conn = koneksi.dbKonek();
+         PreparedStatement pst = conn.prepareStatement(sql)) {
 
+        pst.setDate(1, java.sql.Date.valueOf(startDate));
+        pst.setDate(2, java.sql.Date.valueOf(endDate));
+
+        try (ResultSet rs = pst.executeQuery()) {
+            dataList.clear();
             while (rs.next()) {
-                String tgl = rs.getString("tanggal");
+                String tgl = rs.getString("tgl");
                 double masuk = rs.getDouble("total_masuk");
                 double keluar = rs.getDouble("total_keluar");
 
                 dataList.add(new DataPoint(tgl, masuk, keluar));
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
+    } catch (Exception e) {
+        e.printStackTrace();
     }
-
-   @Override
-protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
-    if (dataList.isEmpty()) return;
-
-    Graphics2D g2 = (Graphics2D) g;
-    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-    int w = getWidth();
-    int h = getHeight();
-
-    // Background gradien
-GradientPaint gp = new GradientPaint(
-    0, 0, Color.white,   // biru muda (lightblue)
-    0, h, new Color(135, 206, 250)        // biru tua (darkblue)
-);
-
-    g2.setPaint(gp);
-    g2.fillRect(0, 0, w, h);
-
-    int padding = 50;
-    int labelPadding = 40;
+}
 
 
-        // cari min & max dari masuk/keluar
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (dataList.isEmpty()) return;
+
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        int w = getWidth();
+        int h = getHeight();
+
+        // Background gradien
+        GradientPaint gp = new GradientPaint(
+            0, 0, Color.white,
+            0, h, new Color(135, 206, 250)
+        );
+        g2.setPaint(gp);
+        g2.fillRect(0, 0, w, h);
+
+        int padding = 50;
+        int labelPadding = 40;
+
+        // cari min & max
         double minValue = Double.MAX_VALUE;
         double maxValue = Double.MIN_VALUE;
         for (DataPoint dp : dataList) {
             minValue = Math.min(minValue, Math.min(dp.masuk, dp.keluar));
             maxValue = Math.max(maxValue, Math.max(dp.masuk, dp.keluar));
         }
-
         if (maxValue == minValue) maxValue += 10;
 
-        // gambar sumbu
+        // sumbu
         g2.drawLine(padding, h - padding, w - padding, h - padding); // X
         g2.drawLine(padding, h - padding, padding, padding);         // Y
 
@@ -115,19 +126,17 @@ GradientPaint gp = new GradientPaint(
 
         for (int i = 0; i < dataList.size(); i++) {
             int x = (int) (i * xScale + padding + labelPadding);
-
             int yMasuk = (int) ((maxValue - dataList.get(i).masuk) * yScale + padding);
             int yKeluar = (int) ((maxValue - dataList.get(i).keluar) * yScale + padding);
 
             pemasukanPoints.add(new Point(x, yMasuk));
             pengeluaranPoints.add(new Point(x, yKeluar));
 
-            // simpan koordinat titik untuk interaksi mouse
             pointList.add(new PointData(new Point(x, yMasuk), dataList.get(i)));
             pointList.add(new PointData(new Point(x, yKeluar), dataList.get(i)));
         }
 
-        // gambar garis pemasukan (biru)
+        // garis pemasukan (hijau)
         g2.setColor(Color.GREEN);
         g2.setStroke(new BasicStroke(2f));
         for (int i = 0; i < pemasukanPoints.size() - 1; i++) {
@@ -135,7 +144,7 @@ GradientPaint gp = new GradientPaint(
                         pemasukanPoints.get(i+1).x, pemasukanPoints.get(i+1).y);
         }
 
-        // gambar garis pengeluaran (merah)
+        // garis pengeluaran (merah)
         g2.setColor(Color.RED);
         g2.setStroke(new BasicStroke(2f));
         for (int i = 0; i < pengeluaranPoints.size() - 1; i++) {
@@ -143,27 +152,34 @@ GradientPaint gp = new GradientPaint(
                         pengeluaranPoints.get(i+1).x, pengeluaranPoints.get(i+1).y);
         }
 
-        // titik pemasukan (biru)
-g2.setColor(new Color(0, 100, 0));  // Dark Green
+        // titik pemasukan
+        g2.setColor(new Color(0, 100, 0));
         for (Point p : pemasukanPoints) {
             g2.fillOval(p.x - 3, p.y - 3, 6, 6);
         }
 
-        // titik pengeluaran (merah)
+        // titik pengeluaran
         g2.setColor(Color.RED);
         for (Point p : pengeluaranPoints) {
             g2.fillOval(p.x - 3, p.y - 3, 6, 6);
         }
 
-        // label tanggal di sumbu X
-        g2.setColor(Color.BLACK);
-        for (int i = 0; i < dataList.size(); i++) {
-            int x = (int) (i * xScale + padding + labelPadding);
-            int y = h - padding + 20;
-            g2.drawString(dataList.get(i).tanggal, x - 20, y);
-        }
-    }
+        // label tanggal di X
+        // label tanggal di X
+g2.setColor(Color.BLACK);
+for (int i = 0; i < dataList.size(); i++) {
+    int x = (int) (i * xScale + padding + labelPadding);
+    int y = h - padding + 20;
 
+    String label = dataList.get(i).tanggal;
+
+    // simpan transform lama
+    Graphics2D g2d = (Graphics2D) g2.create();
+    g2d.rotate(-Math.PI / 4, x, y); // rotasi -45 derajat
+    g2d.drawString(label, x, y);
+    g2d.dispose();
+}
+    }
     // inner class untuk data
     private static class DataPoint {
         String tanggal;
@@ -177,7 +193,7 @@ g2.setColor(new Color(0, 100, 0));  // Dark Green
         }
     }
 
-    // inner class untuk simpan titik + data
+    // inner class titik + data
     private static class PointData {
         Point point;
         DataPoint data;
@@ -187,7 +203,6 @@ g2.setColor(new Color(0, 100, 0));  // Dark Green
             this.data = data;
         }
 
-        // cek apakah klik dekat dengan titik (radius 5px)
         public boolean contains(Point p) {
             return p.distance(point) < 6;
         }

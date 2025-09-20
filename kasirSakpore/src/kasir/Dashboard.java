@@ -7,6 +7,8 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JPanel;
 
 public class Dashboard extends javax.swing.JFrame {
@@ -19,6 +21,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         // sidebar gradasi ungu gelap (atas) → ungu muda (bawah)
         applyGradient(sidebar, new Color(51, 0, 102), new Color(51, 0, 255), false);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy");
+    String tgl = sdf.format(new Date());
+    lblTanggal.setText(tgl);
     }
 
     /**
@@ -66,6 +71,8 @@ public class Dashboard extends javax.swing.JFrame {
         btnAdmin = new javax.swing.JButton();
         btnKuser = new javax.swing.JButton();
         navbar = new javax.swing.JPanel();
+        lblTanggal = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         panelUtama = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -110,17 +117,18 @@ public class Dashboard extends javax.swing.JFrame {
 
         navbar.setBackground(new java.awt.Color(41, 56, 77));
         navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
+        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
-        navbar.setLayout(navbarLayout);
-        navbarLayout.setHorizontalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        navbarLayout.setVerticalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 114, Short.MAX_VALUE)
-        );
+        lblTanggal.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
+        lblTanggal.setForeground(new java.awt.Color(255, 255, 255));
+        lblTanggal.setText("Saturday, 99, December 2025 ");
+        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, 684, 63));
+
+        jComboBox1.setBackground(new java.awt.Color(102, 102, 255));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jComboBox1.setMaximumRowCount(199);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Profil", "Log out" }));
+        navbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 30, 170, 50));
 
         panelUtama.setBackground(new java.awt.Color(255, 255, 255));
         panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
@@ -132,7 +140,7 @@ public class Dashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(navbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1945, Short.MAX_VALUE)
+                    .addComponent(navbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -206,6 +214,8 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnKuser;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel lblTanggal;
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel panelUtama;
     private javax.swing.JPanel sidebar;

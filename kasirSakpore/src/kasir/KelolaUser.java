@@ -105,6 +105,7 @@ public class KelolaUser extends javax.swing.JPanel {
         tblUser = new javax.swing.JTable();
         btDelete = new javax.swing.JButton();
         btEdit = new javax.swing.JButton();
+        Batal = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1720, 960));
         setPreferredSize(new java.awt.Dimension(1720, 960));
@@ -121,34 +122,40 @@ public class KelolaUser extends javax.swing.JPanel {
         pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnFormUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lStatus.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lStatus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lStatus.setText("Status :");
-        pnFormUser.add(lStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 60, -1));
+        pnFormUser.add(lStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 60, 30));
 
-        lUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lUsername.setText("Username :");
-        pnFormUser.add(lUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        pnFormUser.add(lUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
-        lPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lPass.setText("Password :");
-        pnFormUser.add(lPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
-        pnFormUser.add(tfUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 260, -1));
-        pnFormUser.add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 260, -1));
+        pnFormUser.add(lPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
+        tfUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pnFormUser.add(tfUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 260, 60));
+
+        tfPassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pnFormUser.add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 260, 60));
+
+        cbStatus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        pnFormUser.add(cbStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 190, -1));
+        pnFormUser.add(cbStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 260, 50));
 
-        lRole.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lRole.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lRole.setText("Role : ");
-        pnFormUser.add(lRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, -1));
+        pnFormUser.add(lRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 50, -1));
 
+        cbRole.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbRole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbRoleActionPerformed(evt);
             }
         });
-        pnFormUser.add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 190, -1));
+        pnFormUser.add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 260, 50));
 
         btSubmit.setBackground(new java.awt.Color(102, 255, 102));
         btSubmit.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -158,13 +165,13 @@ public class KelolaUser extends javax.swing.JPanel {
                 btSubmitActionPerformed(evt);
             }
         });
-        pnFormUser.add(btSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 420, 90));
+        pnFormUser.add(btSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 420, 90));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel10.setText("Form User");
         pnFormUser.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        pnback.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 460, 760));
+        pnback.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 460, 740));
 
         pnDaftarUser.setBackground(new java.awt.Color(255, 255, 255));
         pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -185,9 +192,10 @@ public class KelolaUser extends javax.swing.JPanel {
                 "No", "ID User", "Username", "Password", "Status"
             }
         ));
+        tblUser.setRowHeight(30);
         jScrollPane2.setViewportView(tblUser);
 
-        pnDaftarUser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 1060, 580));
+        pnDaftarUser.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 1060, 550));
 
         btDelete.setBackground(new java.awt.Color(255, 51, 51));
         btDelete.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -197,7 +205,7 @@ public class KelolaUser extends javax.swing.JPanel {
                 btDeleteActionPerformed(evt);
             }
         });
-        pnDaftarUser.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(862, 103, 90, 40));
+        pnDaftarUser.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 110, 90, 40));
 
         btEdit.setBackground(new java.awt.Color(255, 255, 51));
         btEdit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -207,9 +215,19 @@ public class KelolaUser extends javax.swing.JPanel {
                 btEditActionPerformed(evt);
             }
         });
-        pnDaftarUser.add(btEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 103, 90, 40));
+        pnDaftarUser.add(btEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 110, 90, 40));
 
-        pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 1100, 760));
+        Batal.setBackground(new java.awt.Color(102, 102, 255));
+        Batal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Batal.setText("Batal");
+        Batal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BatalActionPerformed(evt);
+            }
+        });
+        pnDaftarUser.add(Batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, 90, 40));
+
+        pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 1100, 740));
 
         add(pnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1720, 920));
     }// </editor-fold>//GEN-END:initComponents
@@ -326,8 +344,18 @@ public class KelolaUser extends javax.swing.JPanel {
             }
     }//GEN-LAST:event_btDeleteActionPerformed
 
+    private void BatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatalActionPerformed
+    tfUsername.setText("");
+    tfPassword.setText("");
+    cbRole.setSelectedIndex(0);  
+    cbStatus.setSelectedIndex(0); 
+    tblUser.clearSelection();
+
+    }//GEN-LAST:event_BatalActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Batal;
     private javax.swing.JButton btDelete;
     private javax.swing.JButton btEdit;
     private javax.swing.JButton btSubmit;
