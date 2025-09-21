@@ -70,6 +70,7 @@ public class Dashboard extends javax.swing.JFrame {
         sidebar = new javax.swing.JPanel();
         btnAdmin = new javax.swing.JButton();
         btnKuser = new javax.swing.JButton();
+        btnKasir = new javax.swing.JButton();
         navbar = new javax.swing.JPanel();
         lblTanggal = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -94,6 +95,13 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        btnKasir.setText("Kasir");
+        btnKasir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKasirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
@@ -102,7 +110,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKuser, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                    .addComponent(btnKuser, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btnKasir, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
                 .addContainerGap())
         );
         sidebarLayout.setVerticalGroup(
@@ -112,6 +121,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnKuser, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -176,6 +187,15 @@ public class Dashboard extends javax.swing.JFrame {
     panelUtama.repaint();          
     }//GEN-LAST:event_btnAdminActionPerformed
 
+    private void btnKasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKasirActionPerformed
+panelUtama.removeAll();                
+    Kasir kasirpanel = new Kasir();        
+    panelUtama.add(kasirpanel); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();         
+
+    }//GEN-LAST:event_btnKasirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -213,6 +233,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmin;
+    private javax.swing.JButton btnKasir;
     private javax.swing.JButton btnKuser;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblTanggal;

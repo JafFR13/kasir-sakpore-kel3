@@ -37,8 +37,19 @@ public class Admin extends javax.swing.JPanel {
     String endDate = today.toString(); 
     loadChart(startDate, endDate);
     
-// warna hijau
-applyGradient(panelPemasukkan, new Color(204, 255, 204), new Color(102, 204, 102), false);
+warna();
+  try {
+            Connection conn = koneksi.dbKonek();
+            updateLabels(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }   
+        
+   
+}
+   
+   private void warna(){
+   applyGradient(panelPemasukkan, new Color(204, 255, 204), new Color(102, 204, 102), false);
 
 // warna merah
 applyGradient(panelPengeluaran, new Color(255, 204, 204), new Color(255, 102, 102), false);
@@ -54,15 +65,7 @@ applyGradient(pnlTransaksi, new Color(229, 204, 255), new Color(153, 102, 255), 
 // atas: biru muda, bawah: biru segar
 applyGradient(panelKeuntunganTotal, new Color(204, 229, 255), new Color(102, 153, 255), false);
 applyGradient(pnlMen, new Color(204, 229, 255), new Color(102, 153, 255), false);
-  try {
-            Connection conn = koneksi.dbKonek();
-            updateLabels(conn);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-   
-}
+   }
     private void updateLabels(Connection conn) {
         try {
             NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
@@ -373,20 +376,31 @@ private void loadChart(String startDate, String endDate) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterActionPerformed
-java.util.Date start = jdcStart.getDate();
+ java.util.Date start = jdcStart.getDate();
     java.util.Date end = jdcEnd.getDate();
 
     if (start != null && end != null) {
+        // Cek jika tanggal awal lebih besar dari tanggal akhir
+        if (start.after(end)) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Tanggal awal tidak boleh lebih besar dari tanggal akhir!",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            return; // hentikan proses
+        }
+
         String startDate = new java.text.SimpleDateFormat("yyyy-MM-dd").format(start);
         String endDate = new java.text.SimpleDateFormat("yyyy-MM-dd").format(end);
 
         loadChart(startDate, endDate);
     } else {
-JOptionPane.showMessageDialog(
-    null, 
-    "Pilih tanggal awal dan akhir dulu!"
-);
-    }        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(
+            null, 
+            "Pilih tanggal awal dan akhir dulu!"
+        );
+    }     // TODO add your handling code here:
     }//GEN-LAST:event_btnFilterActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
