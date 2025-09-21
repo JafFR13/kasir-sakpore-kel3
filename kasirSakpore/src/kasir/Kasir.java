@@ -200,7 +200,7 @@ private void showPopupPembayaran() {
 
     // === POPUP DIALOG ===
     JDialog dialog = new JDialog(parentWindow, "Pembayaran", Dialog.ModalityType.APPLICATION_MODAL);
-    dialog.setSize(600, 500);
+    dialog.setSize(700, 700);
     dialog.setLocationRelativeTo(this);
     dialog.setLayout(new BorderLayout(10, 10));
 
