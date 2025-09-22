@@ -69,6 +69,7 @@
                       <Component id="btnAdmin" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnKuser" alignment="0" pref="187" max="32767" attributes="0"/>
                       <Component id="btnKasir" alignment="0" pref="187" max="32767" attributes="0"/>
+                      <Component id="btnKasir1" alignment="1" pref="187" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -83,6 +84,8 @@
                   <Component id="btnKuser" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnKasir" min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnKasir1" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -111,6 +114,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKasirActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnKasir1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kasir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKasir1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
