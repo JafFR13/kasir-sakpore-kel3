@@ -6,14 +6,14 @@ package kasir;
 
 /**
  *
- * @author yaniyan
+ * @author LAB FO-05
  */
-public class serah extends javax.swing.JPanel {
+public class LaporanPenjualan extends javax.swing.JPanel {
 
     /**
-     * Creates new form serah
+     * Creates new form LaporanPenjualan
      */
-    public serah() {
+    public LaporanPenjualan() {
         initComponents();
     }
 
@@ -26,30 +26,19 @@ public class serah extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-
-        jButton1.setText("jButton1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(493, 493, 493)
-                .addComponent(jButton1)
-                .addContainerGap(17172, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(355, 355, 355)
-                .addComponent(jButton1)
-                .addContainerGap(591, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
