@@ -69,7 +69,10 @@
                       <Component id="btnAdmin" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnKuser" alignment="0" pref="187" max="32767" attributes="0"/>
                       <Component id="btnKasir" alignment="0" pref="187" max="32767" attributes="0"/>
-                      <Component id="btnKasir1" alignment="1" pref="187" max="32767" attributes="0"/>
+                      <Component id="btnBarang" alignment="1" pref="187" max="32767" attributes="0"/>
+                      <Component id="btnKeuangan" alignment="1" pref="187" max="32767" attributes="0"/>
+                      <Component id="btnPembelian" alignment="0" pref="187" max="32767" attributes="0"/>
+                      <Component id="btnPembelian1" alignment="0" pref="187" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -80,12 +83,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="btnAdmin" min="-2" pref="58" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnKuser" min="-2" pref="58" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnKasir" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnKasir1" min="-2" pref="58" max="-2" attributes="0"/>
+                  <Component id="btnKuser" min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnPembelian1" min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnBarang" min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnKeuangan" min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnPembelian" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -116,12 +125,36 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKasirActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnKasir1">
+        <Component class="javax.swing.JButton" name="btnBarang">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Kasir"/>
+            <Property name="text" type="java.lang.String" value="KelolaBarang"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKasir1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBarangActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnKeuangan">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="kelolaKeuangan"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKeuanganActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnPembelian">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PembelianBaang"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPembelianActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnPembelian1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="KelolaSupplier"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPembelian1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
