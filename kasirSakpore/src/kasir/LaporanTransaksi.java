@@ -26,19 +26,201 @@ public class LaporanTransaksi extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        pnFormUser = new javax.swing.JPanel();
+        jdcTanggal = new com.toedter.calendar.JDateChooser();
+        lUsername = new javax.swing.JLabel();
+        lPass = new javax.swing.JLabel();
+        txtJenis = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtMasuk = new javax.swing.JTextField();
+        lPass1 = new javax.swing.JLabel();
+        txtKeluar = new javax.swing.JTextField();
+        lPass2 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        pnDaftarUser = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnEdit = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        jdcStart = new com.toedter.calendar.JDateChooser();
+        jdcEnd = new com.toedter.calendar.JDateChooser();
+        jLabel2 = new javax.swing.JLabel();
+        btnFilter = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblKeuangan = new javax.swing.JTable();
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1740, 960));
+
+        pnFormUser.setBackground(new java.awt.Color(255, 255, 255));
+        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnFormUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jdcTanggal.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        pnFormUser.add(jdcTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 340, 60));
+
+        lUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lUsername.setText("Tanggal:");
+        pnFormUser.add(lUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+
+        lPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lPass.setText("Jenis Keuangan:");
+        pnFormUser.add(lPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+
+        txtJenis.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pnFormUser.add(txtJenis, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 340, 60));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel10.setText("Kelola Keuangan");
+        pnFormUser.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        txtMasuk.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pnFormUser.add(txtMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 340, 60));
+
+        lPass1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lPass1.setText("Masuk:");
+        pnFormUser.add(lPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
+
+        txtKeluar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKeluarActionPerformed(evt);
+            }
+        });
+        pnFormUser.add(txtKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 340, 60));
+
+        lPass2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lPass2.setText("Keluar:");
+        pnFormUser.add(lPass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
+
+        btnSubmit.setBackground(new java.awt.Color(0, 255, 51));
+        btnSubmit.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btnSubmit.setText("SUBMIT");
+        pnFormUser.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, 440, 90));
+
+        pnDaftarUser.setBackground(new java.awt.Color(255, 255, 255));
+        pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnDaftarUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel1.setText("Daftar Keuangan");
+        pnDaftarUser.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        btnEdit.setText("EDIT");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
+        pnDaftarUser.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, 120, 40));
+
+        btnDelete.setText("DELETE");
+        pnDaftarUser.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 110, 120, 40));
+        pnDaftarUser.add(jdcStart, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 150, 40));
+        pnDaftarUser.add(jdcEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 150, 40));
+
+        jLabel2.setText("SAMPAI");
+        pnDaftarUser.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
+
+        btnFilter.setText("FILTER");
+        btnFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFilterActionPerformed(evt);
+            }
+        });
+        pnDaftarUser.add(btnFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 120, 40));
+
+        btnReset.setText("REFRESH");
+        pnDaftarUser.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 120, 40));
+
+        tblKeuangan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Tanggal", "JenisKeuangan", "Masuk", "Keluar", "Total"
+            }
+        ));
+        jScrollPane1.setViewportView(tblKeuangan);
+
+        pnDaftarUser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 170, 1040, 520));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 60, Short.MAX_VALUE)
+                .addComponent(pnFormUser, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(pnDaftarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 60, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 110, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnFormUser, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnDaftarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 110, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKeluarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtKeluarActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFilterActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnFilter;
+    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser jdcEnd;
+    private com.toedter.calendar.JDateChooser jdcStart;
+    private com.toedter.calendar.JDateChooser jdcTanggal;
+    private javax.swing.JLabel lPass;
+    private javax.swing.JLabel lPass1;
+    private javax.swing.JLabel lPass2;
+    private javax.swing.JLabel lUsername;
+    private javax.swing.JPanel pnDaftarUser;
+    private javax.swing.JPanel pnFormUser;
+    private javax.swing.JTable tblKeuangan;
+    private javax.swing.JTextField txtJenis;
+    private javax.swing.JTextField txtKeluar;
+    private javax.swing.JTextField txtMasuk;
     // End of variables declaration//GEN-END:variables
 }
