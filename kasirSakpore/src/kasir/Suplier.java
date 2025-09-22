@@ -26,19 +26,173 @@ public class Suplier extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        pnFormUser = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblSuplier = new javax.swing.JTable();
+        btnDelete = new javax.swing.JButton();
+        btnBatal = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        pnFormUser1 = new javax.swing.JPanel();
+        lStatus2 = new javax.swing.JLabel();
+        lUsername1 = new javax.swing.JLabel();
+        lPass1 = new javax.swing.JLabel();
+        cmbStatus = new javax.swing.JComboBox<>();
+        txtAlamat = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
+        lStatus3 = new javax.swing.JLabel();
+        btnSimpan = new javax.swing.JButton();
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1740, 960));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnFormUser.setBackground(new java.awt.Color(255, 255, 255));
+        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnFormUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblSuplier.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Nama", "No Telepon", "Status ", "Alamat"
+            }
+        ));
+        jScrollPane1.setViewportView(tblSuplier);
+
+        pnFormUser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 1030, 510));
+
+        btnDelete.setBackground(new java.awt.Color(255, 51, 0));
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        pnFormUser.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 130, 170, 40));
+
+        btnBatal.setBackground(new java.awt.Color(153, 153, 153));
+        btnBatal.setText("Batal");
+        pnFormUser.add(btnBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 170, 40));
+
+        btnEdit.setBackground(new java.awt.Color(255, 153, 0));
+        btnEdit.setText("Edit");
+        pnFormUser.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 170, 40));
+
+        jPanel1.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 1090, 740));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel2.setText("Kelola Suplier");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        pnFormUser1.setBackground(new java.awt.Color(255, 255, 255));
+        pnFormUser1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnFormUser1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lStatus2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lStatus2.setText("Alamat :");
+        pnFormUser1.add(lStatus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 70, 30));
+
+        lUsername1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lUsername1.setText("Username :");
+        pnFormUser1.add(lUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        lPass1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lPass1.setText("Password :");
+        pnFormUser1.add(lPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif/Tidak aktif" }));
+        pnFormUser1.add(cmbStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 220, 40));
+
+        txtAlamat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAlamatActionPerformed(evt);
+            }
+        });
+        pnFormUser1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 260, 130));
+
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+        pnFormUser1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 260, 60));
+
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        pnFormUser1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 260, 60));
+
+        lStatus3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lStatus3.setText("Status :");
+        pnFormUser1.add(lStatus3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 60, 30));
+
+        btnSimpan.setBackground(new java.awt.Color(0, 255, 102));
+        btnSimpan.setText("Simpan");
+        pnFormUser1.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 670, 250, 50));
+
+        jPanel1.add(pnFormUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 460, 740));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlamatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAlamatActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBatal;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnSimpan;
+    private javax.swing.JComboBox<String> cmbStatus;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lPass1;
+    private javax.swing.JLabel lStatus2;
+    private javax.swing.JLabel lStatus3;
+    private javax.swing.JLabel lUsername1;
+    private javax.swing.JPanel pnFormUser;
+    private javax.swing.JPanel pnFormUser1;
+    private javax.swing.JTable tblSuplier;
+    private javax.swing.JTextField txtAlamat;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

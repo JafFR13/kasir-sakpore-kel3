@@ -26,19 +26,161 @@ public class Pembelian extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelUtama = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtKodeBarang = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
+        txtNamaBarang = new javax.swing.JTextField();
+        txtJumlah = new javax.swing.JTextField();
+        txtSatuan = new javax.swing.JTextField();
+        txtHarga = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        btnPilih = new javax.swing.JButton();
+        cmbSuplier = new javax.swing.JComboBox<>();
+        btnBeli = new javax.swing.JButton();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        jLabel9 = new javax.swing.JLabel();
+        cmbKapan = new javax.swing.JComboBox<>();
+        btnRefresh = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblBarang = new javax.swing.JTable();
+
+        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
+        panelUtama.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Sampai");
+        panelUtama.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setText("Kode Barang");
+        panelUtama.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setText("Nama Barang");
+        panelUtama.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Suplier");
+        panelUtama.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setText("Satuan");
+        panelUtama.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 100, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setText("Harga");
+        panelUtama.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setText("Jumlah");
+        panelUtama.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 110, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setText("Total Harga");
+        panelUtama.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 200, -1, -1));
+        panelUtama.add(txtKodeBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 200, 130, 40));
+        panelUtama.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 190, 160, 40));
+        panelUtama.add(txtNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 130, 40));
+        panelUtama.add(txtJumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 100, 160, 40));
+        panelUtama.add(txtSatuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 130, 40));
+        panelUtama.add(txtHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 130, 40));
+        panelUtama.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 126, 40));
+
+        btnPilih.setText("Pilih");
+        panelUtama.add(btnPilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 120, 40));
+
+        cmbSuplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suplier Pilih", " " }));
+        panelUtama.add(cmbSuplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 130, 40));
+
+        btnBeli.setText("Beli");
+        panelUtama.add(btnBeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 130, 40));
+        panelUtama.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 126, 40));
+        panelUtama.add(jDateChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 126, 40));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setText("Tanggal");
+        panelUtama.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+
+        cmbKapan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hari Ini", "7 Hari Terakhir", "1 Bulan Terakhir", "Tahun ini", " " }));
+        panelUtama.add(cmbKapan, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 130, 40));
+
+        btnRefresh.setText("Refresh");
+        panelUtama.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 410, 130, 40));
+
+        tblBarang.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Tanggal", "Kode Barang", "Nama Barang", "Suplier", "Satuan", "Harga", "Jumlah", "Total Harga", "Stok"
+            }
+        ));
+        jScrollPane1.setViewportView(tblBarang);
+
+        panelUtama.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 1570, 390));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBeli;
+    private javax.swing.JButton btnPilih;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JComboBox<String> cmbKapan;
+    private javax.swing.JComboBox<String> cmbSuplier;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser jDateChooser3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelUtama;
+    private javax.swing.JTable tblBarang;
+    private javax.swing.JTextField txtHarga;
+    private javax.swing.JTextField txtJumlah;
+    private javax.swing.JTextField txtKodeBarang;
+    private javax.swing.JTextField txtNamaBarang;
+    private javax.swing.JTextField txtSatuan;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
