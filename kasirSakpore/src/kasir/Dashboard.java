@@ -38,6 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelBg.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        panelBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         navbar.setBackground(new java.awt.Color(153, 255, 153));
         navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
@@ -52,6 +53,8 @@ public class Dashboard extends javax.swing.JFrame {
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 150, Short.MAX_VALUE)
         );
+
+        panelBg.add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         sidebar.setBackground(new java.awt.Color(0, 204, 0));
         sidebar.setPreferredSize(new java.awt.Dimension(150, 920));
@@ -80,43 +83,12 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(662, Short.MAX_VALUE))
         );
 
+        panelBg.add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 162, -1, -1));
+
+        panelUtama.setBackground(new java.awt.Color(255, 204, 204));
         panelUtama.setPreferredSize(new java.awt.Dimension(1740, 920));
-
-        javax.swing.GroupLayout panelUtamaLayout = new javax.swing.GroupLayout(panelUtama);
-        panelUtama.setLayout(panelUtamaLayout);
-        panelUtamaLayout.setHorizontalGroup(
-            panelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        panelUtamaLayout.setVerticalGroup(
-            panelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout panelBgLayout = new javax.swing.GroupLayout(panelBg);
-        panelBg.setLayout(panelBgLayout);
-        panelBgLayout.setHorizontalGroup(
-            panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBgLayout.createSequentialGroup()
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panelBgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panelBgLayout.setVerticalGroup(
-            panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBgLayout.createSequentialGroup()
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        panelUtama.setLayout(new java.awt.BorderLayout());
+        panelBg.add(panelUtama, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 162, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,11 +105,18 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- panelUtama.removeAll(); // bersihkan dulu
-        Admin adminPanel = new Admin(); // panggil panel Admin
-        panelUtama.add(adminPanel);
-        panelUtama.revalidate();
-        panelUtama.repaint();        // TODO add your handling code here:
+  panelUtama.removeAll();
+
+    // Buat instance panel kasir
+    adminPanel kasirPanel = new adminPanel();
+
+    // Tambahkan panel kasir ke dalam panelUtama
+    panelUtama.setLayout(new BorderLayout());
+    panelUtama.add(kasirPanel, BorderLayout.CENTER);
+
+    // Refresh tampilannya
+    panelUtama.revalidate();
+    panelUtama.repaint();      // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
