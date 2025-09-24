@@ -49,7 +49,7 @@ public class Suplier extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnFormUser.setBackground(new java.awt.Color(255, 255, 255));
-        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnFormUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblSuplier.setModel(new javax.swing.table.DefaultTableModel(
@@ -84,14 +84,14 @@ public class Suplier extends javax.swing.JPanel {
         btnEdit.setText("Edit");
         pnFormUser.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 170, 40));
 
-        jPanel1.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 1090, 740));
+        jPanel1.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 1090, 740));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         jLabel2.setText("Kelola Suplier");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         pnFormUser1.setBackground(new java.awt.Color(255, 255, 255));
-        pnFormUser1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnFormUser1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnFormUser1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lStatus2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -106,7 +106,7 @@ public class Suplier extends javax.swing.JPanel {
         lPass1.setText("Password :");
         pnFormUser1.add(lPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
-        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif/Tidak aktif" }));
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif", "Tidak aktif" }));
         pnFormUser1.add(cmbStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 220, 40));
 
         txtAlamat.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class Suplier extends javax.swing.JPanel {
         btnSimpan.setText("Simpan");
         pnFormUser1.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 670, 250, 50));
 
-        jPanel1.add(pnFormUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 460, 740));
+        jPanel1.add(pnFormUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 460, 740));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

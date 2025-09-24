@@ -86,7 +86,6 @@ public class KelolaUser extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         pnback = new javax.swing.JPanel();
         pnFormUser = new javax.swing.JPanel();
         lStatus = new javax.swing.JLabel();
@@ -106,16 +105,15 @@ public class KelolaUser extends javax.swing.JPanel {
         btDelete = new javax.swing.JButton();
         btEdit = new javax.swing.JButton();
         Batal = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(1720, 960));
         setPreferredSize(new java.awt.Dimension(1720, 960));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
-        jLabel2.setText("Kelola User");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-
         pnback.setBackground(new java.awt.Color(255, 255, 255));
+        pnback.setPreferredSize(new java.awt.Dimension(1740, 960));
         pnback.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnFormUser.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,7 +169,7 @@ public class KelolaUser extends javax.swing.JPanel {
         jLabel10.setText("Form User");
         pnFormUser.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        pnback.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 460, 740));
+        pnback.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 460, 740));
 
         pnDaftarUser.setBackground(new java.awt.Color(255, 255, 255));
         pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -227,9 +225,17 @@ public class KelolaUser extends javax.swing.JPanel {
         });
         pnDaftarUser.add(Batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, 90, 40));
 
-        pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 1100, 740));
+        pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 1100, 740));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel2.setText("Kelola User");
+        pnback.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         add(pnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1720, 920));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel3.setText("Kelola User");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditActionPerformed
@@ -364,6 +370,7 @@ public class KelolaUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lPass;
     private javax.swing.JLabel lRole;

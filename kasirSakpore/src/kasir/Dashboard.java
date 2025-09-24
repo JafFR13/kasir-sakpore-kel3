@@ -3,60 +3,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package kasir;
+
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JPanel;
-
+import java.sql.*;
+import javax.swing.*;
+import static javax.swing.GroupLayout.Alignment.CENTER;
+import java.awt.*;
+/**
+ *
+ * @author user
+ */
 public class Dashboard extends javax.swing.JFrame {
 
+    /**
+     * Creates new form Dashboard
+     */
     public Dashboard() {
         initComponents();
-
-        // navbar gradasi navy (kiri) → biru muda (kanan)
-        applyGradient(navbar, new Color(0, 0, 128), new Color(0, 0, 200), true);
-
-        // sidebar gradasi ungu gelap (atas) → ungu muda (bawah)
-        applyGradient(sidebar, new Color(51, 0, 102), new Color(51, 0, 255), false);
+    
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy");
     String tgl = sdf.format(new Date());
     lblTanggal.setText(tgl);
     }
 
-    /**
-     * @param panel panel yang mau diwarnai
-     * @param c1 warna awal
-     * @param c2 warna akhir
-     * @param horizontal true = kiri→kanan, false = atas→bawah
-     */
-    private void applyGradient(JPanel panel, Color c1, Color c2, boolean horizontal) {
-        panel.setOpaque(false);
-        panel.setUI(new javax.swing.plaf.PanelUI() {
-            @Override
-            public void update(Graphics g, javax.swing.JComponent c) {
-                Graphics2D g2d = (Graphics2D) g;
-                int w = c.getWidth();
-                int h = c.getHeight();
 
-                GradientPaint gp;
-                if (horizontal) {
-                    gp = new GradientPaint(0, 0, c1, w, 0, c2); // kiri → kanan
-                } else {
-                    gp = new GradientPaint(0, 0, c1, 0, h, c2); // atas → bawah
-                }
-
-                g2d.setPaint(gp);
-                g2d.fillRect(0, 0, w, h);
-
-                super.update(g, c);
-            }
-        });
-    }
-
-        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,70 +44,95 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        sidebar = new javax.swing.JPanel();
-        btnAdmin = new javax.swing.JButton();
-        btnKuser = new javax.swing.JButton();
-        btnKasir = new javax.swing.JButton();
-        btnBarang = new javax.swing.JButton();
-        btnKeuangan = new javax.swing.JButton();
-        btnPembelian = new javax.swing.JButton();
-        btnPembelian1 = new javax.swing.JButton();
+        panelUtama = new javax.swing.JPanel();
         navbar = new javax.swing.JPanel();
         lblTanggal = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        panelUtama = new javax.swing.JPanel();
+        cmbLaporan = new javax.swing.JComboBox<>();
+        sidebar = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sidebar.setBackground(new java.awt.Color(252, 250, 246));
-        sidebar.setPreferredSize(new java.awt.Dimension(1920, 150));
+        panelUtama.setBackground(new java.awt.Color(255, 255, 255));
+        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
+        panelUtama.setLayout(new java.awt.BorderLayout());
 
-        btnAdmin.setText("AdminDashBoard");
-        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+        navbar.setBackground(new java.awt.Color(51, 51, 255));
+        navbar.setMinimumSize(new java.awt.Dimension(1980, 140));
+        navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
+        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTanggal.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lblTanggal.setText("WEDNESDAY 99, OKTOVER 2025");
+        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, 840, 90));
+
+        cmbLaporan.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        cmbLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih laporan", "laporan keuangan", "laporan penjualan", "laporan pembelian" }));
+        cmbLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminActionPerformed(evt);
+                cmbLaporanActionPerformed(evt);
+            }
+        });
+        navbar.add(cmbLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 200, 40));
+
+        sidebar.setBackground(new java.awt.Color(51, 51, 255));
+        sidebar.setPreferredSize(new java.awt.Dimension(168, 960));
+
+        jButton1.setText("ADMIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
-        btnKuser.setText("KelolaUser");
-        btnKuser.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("KELOLA BARANG");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKuserActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        btnKasir.setText("Kasir");
-        btnKasir.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("KELOLA USER");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKasirActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
-        btnBarang.setText("KelolaBarang");
-        btnBarang.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("KELOLA KEUANGAN");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBarangActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
 
-        btnKeuangan.setText("kelolaKeuangan");
-        btnKeuangan.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setText("KELOLA KEUANGAN");
+
+        jButton6.setText("KELOLA SUPPLIER");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKeuanganActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
 
-        btnPembelian.setText("PembelianBaang");
-        btnPembelian.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.setText("KASIR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPembelianActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
 
-        btnPembelian1.setText("KelolaSupplier");
-        btnPembelian1.addActionListener(new java.awt.event.ActionListener() {
+        jButton8.setText("PEMBELIAN");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPembelian1ActionPerformed(evt);
+                jButton8ActionPerformed(evt);
             }
         });
 
@@ -139,127 +141,165 @@ public class Dashboard extends javax.swing.JFrame {
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKuser, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(btnKasir, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(btnBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(btnKeuangan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(btnPembelian, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(btnPembelian1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(16, 16, 16)
+                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnKuser, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPembelian1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnKeuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(333, Short.MAX_VALUE))
         );
-
-        navbar.setBackground(new java.awt.Color(41, 56, 77));
-        navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
-        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblTanggal.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
-        lblTanggal.setForeground(new java.awt.Color(255, 255, 255));
-        lblTanggal.setText("Saturday, 99, December 2025 ");
-        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, 684, 63));
-
-        jComboBox1.setBackground(new java.awt.Color(102, 102, 255));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jComboBox1.setMaximumRowCount(199);
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Profil", "Log out" }));
-        navbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 30, 170, 50));
-
-        panelUtama.setBackground(new java.awt.Color(255, 255, 255));
-        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
-        panelUtama.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(navbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 1982, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1810, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
-                    .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 162, Short.MAX_VALUE)
+                    .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnKuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKuserActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  panelUtama.removeAll();                
+    Admin adminPanel = new Admin();        
+
+        panelUtama.add(adminPanel, BorderLayout.CENTER); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
  panelUtama.removeAll();                
     KelolaUser kuser = new KelolaUser();        
-    panelUtama.add(kuser); 
+    panelUtama.add(kuser, BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();           
-    }//GEN-LAST:event_btnKuserActionPerformed
+             // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
- panelUtama.removeAll();                
-    Admin adminPanel = new Admin();        
-    panelUtama.add(adminPanel); 
-    panelUtama.revalidate();               
-    panelUtama.repaint();          
-    }//GEN-LAST:event_btnAdminActionPerformed
-
-    private void btnKasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKasirActionPerformed
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 panelUtama.removeAll();                
-    Kasir kasirP = new Kasir();        
-    panelUtama.add(kasirP); 
+    Kasir kasirP = new Kasir(); 
+    panelUtama.add(kasirP,BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();         
-
-    }//GEN-LAST:event_btnKasirActionPerformed
-
-    private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
         // TODO add your handling code here:
-        panelUtama.removeAll();                
-    KelolaBarang barangP = new KelolaBarang();        
-    panelUtama.add(barangP); 
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+panelUtama.removeAll();                
+    KelolaBarang kbarang = new KelolaBarang();        
+    panelUtama.add(kbarang,BorderLayout.CENTER); 
     panelUtama.revalidate();               
-    panelUtama.repaint();
-    }//GEN-LAST:event_btnBarangActionPerformed
+    panelUtama.repaint();             // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void btnKeuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeuanganActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnKeuanganActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+panelUtama.removeAll();                
+    KelolaKeuangan kuang = new KelolaKeuangan();        
+    panelUtama.add(kuang,BorderLayout.CENTER); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void btnPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembelianActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+panelUtama.removeAll();                
+    Pembelian kbeli = new Pembelian();        
+    panelUtama.add(kbeli,BorderLayout.CENTER); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();                                                 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnPembelianActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void btnPembelian1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembelian1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPembelian1ActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+panelUtama.removeAll();                
+    Suplier ksup = new Suplier();        
+    panelUtama.add(ksup,BorderLayout.CENTER); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();                                                 
+               // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void cmbLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLaporanActionPerformed
+    String pilihan = (String) cmbLaporan.getSelectedItem();
+
+    panelUtama.removeAll(); // hapus isi lama
+
+    switch (pilihan) {
+       case "laporan keuangan":
+            LaporanKeuangan lk = new LaporanKeuangan();
+            panelUtama.add(lk, BorderLayout.CENTER);
+            break;
+
+        case "laporan pembelian":
+            LaporanPembelian lp = new LaporanPembelian();
+            panelUtama.add(lp, BorderLayout.CENTER);
+            break;
+
+        case "laporan penjualan":
+            LaporanPenjualan lpn = new LaporanPenjualan();
+            panelUtama.add(lpn, BorderLayout.CENTER);
+            break;
+
+
+
+        default:
+            panelUtama.add(new javax.swing.JLabel("Silakan pilih laporan"), BorderLayout.CENTER);
+    }
+
+    panelUtama.revalidate(); // refresh layout
+    panelUtama.repaint();    // redraw
+
+
+    }//GEN-LAST:event_cmbLaporanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,14 +337,15 @@ panelUtama.removeAll();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdmin;
-    private javax.swing.JButton btnBarang;
-    private javax.swing.JButton btnKasir;
-    private javax.swing.JButton btnKeuangan;
-    private javax.swing.JButton btnKuser;
-    private javax.swing.JButton btnPembelian;
-    private javax.swing.JButton btnPembelian1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbLaporan;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel lblTanggal;
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel panelUtama;

@@ -456,7 +456,6 @@ private String generateNoTransaksi(Connection conn) throws SQLException {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnEdit = new javax.swing.JButton();
-        jdcTanggal = new com.toedter.calendar.JDateChooser();
         btnDelete = new javax.swing.JButton();
         txtSku = new javax.swing.JTextField();
         txtPengguna = new javax.swing.JTextField();
@@ -471,6 +470,7 @@ private String generateNoTransaksi(Connection conn) throws SQLException {
         pnlMenu = new javax.swing.JPanel();
         txtSku1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jdcTanggal = new com.toedter.calendar.JDateChooser();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1740, 960));
@@ -498,7 +498,6 @@ private String generateNoTransaksi(Connection conn) throws SQLException {
             }
         });
         jPanel1.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 312, 97, 50));
-        jPanel1.add(jdcTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 312, 281, 50));
 
         btnDelete.setBackground(new java.awt.Color(255, 51, 51));
         btnDelete.setText("DELETE");
@@ -570,6 +569,7 @@ private String generateNoTransaksi(Connection conn) throws SQLException {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("TOTAL");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 163, -1, -1));
+        jPanel1.add(jdcTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 290, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

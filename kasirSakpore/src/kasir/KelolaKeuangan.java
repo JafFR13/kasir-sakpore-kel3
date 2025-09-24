@@ -8,12 +8,12 @@ package kasir;
  *
  * @author yaniyan
  */
-public class LaporanTransaksi extends javax.swing.JPanel {
+public class KelolaKeuangan extends javax.swing.JPanel {
 
     /**
      * Creates new form LaporanTransaksi
      */
-    public LaporanTransaksi() {
+    public KelolaKeuangan() {
         initComponents();
     }
 
@@ -49,11 +49,12 @@ public class LaporanTransaksi extends javax.swing.JPanel {
         btnReset = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblKeuangan = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1740, 960));
 
         pnFormUser.setBackground(new java.awt.Color(255, 255, 255));
-        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnFormUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jdcTanggal.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -96,10 +97,10 @@ public class LaporanTransaksi extends javax.swing.JPanel {
         btnSubmit.setBackground(new java.awt.Color(0, 255, 51));
         btnSubmit.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnSubmit.setText("SUBMIT");
-        pnFormUser.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 440, 90));
+        pnFormUser.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 440, 90));
 
         pnDaftarUser.setBackground(new java.awt.Color(255, 255, 255));
-        pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnDaftarUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
@@ -148,25 +149,33 @@ public class LaporanTransaksi extends javax.swing.JPanel {
 
         pnDaftarUser.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 170, 1040, 520));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel3.setText("Kelola Keungan");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 60, Short.MAX_VALUE)
-                .addComponent(pnFormUser, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(pnDaftarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 60, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(pnFormUser, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(pnDaftarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 110, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnFormUser, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pnDaftarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 110, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -207,6 +216,7 @@ public class LaporanTransaksi extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.toedter.calendar.JDateChooser jdcEnd;
