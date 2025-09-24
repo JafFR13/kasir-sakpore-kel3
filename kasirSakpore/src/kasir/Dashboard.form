@@ -72,7 +72,7 @@
                       <Component id="btnBarang" alignment="1" pref="187" max="32767" attributes="0"/>
                       <Component id="btnKeuangan" alignment="1" pref="187" max="32767" attributes="0"/>
                       <Component id="btnPembelian" alignment="0" pref="187" max="32767" attributes="0"/>
-                      <Component id="btnPembelian1" alignment="0" pref="187" max="32767" attributes="0"/>
+                      <Component id="btnSup" alignment="0" pref="187" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -88,7 +88,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnKuser" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnPembelian1" min="-2" pref="58" max="-2" attributes="0"/>
+                  <Component id="btnSup" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnBarang" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -149,12 +149,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPembelianActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnPembelian1">
+        <Component class="javax.swing.JButton" name="btnSup">
           <Properties>
             <Property name="text" type="java.lang.String" value="KelolaSupplier"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPembelian1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSupActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -185,7 +185,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1060" y="20" width="684" height="63"/>
+              <AbsoluteConstraints x="1020" y="20" width="684" height="63"/>
             </Constraint>
           </Constraints>
         </Component>

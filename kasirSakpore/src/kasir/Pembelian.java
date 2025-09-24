@@ -27,94 +27,95 @@ public class Pembelian extends javax.swing.JPanel {
     private void initComponents() {
 
         panelUtama = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtKodeBarang = new javax.swing.JTextField();
-        txtTotal = new javax.swing.JTextField();
-        txtNamaBarang = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        cmbSuplier = new javax.swing.JComboBox<>();
+        btnPilih = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        txtHarga = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         txtJumlah = new javax.swing.JTextField();
         txtSatuan = new javax.swing.JTextField();
-        txtHarga = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        btnPilih = new javax.swing.JButton();
-        cmbSuplier = new javax.swing.JComboBox<>();
+        txtNamaBarang = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         btnBeli = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        txtTotal = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cmbKapan = new javax.swing.JComboBox<>();
-        btnRefresh = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBarang = new javax.swing.JTable();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jLabel1 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        btnRefresh = new javax.swing.JButton();
 
         panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
         panelUtama.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Sampai");
-        panelUtama.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("Kode Barang");
-        panelUtama.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("Nama Barang");
-        panelUtama.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setText("Suplier");
-        panelUtama.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel5.setText("Satuan");
-        panelUtama.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 100, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setText("Harga");
-        panelUtama.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel7.setText("Jumlah");
-        panelUtama.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 110, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 110, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setText("Nama Barang");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
+        jPanel1.add(txtKodeBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 200, 180, 60));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Suplier");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, -1, -1));
+
+        cmbSuplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suplier Pilih", " " }));
+        jPanel1.add(cmbSuplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 180, 60));
+
+        btnPilih.setBackground(new java.awt.Color(102, 102, 255));
+        btnPilih.setText("Pilih");
+        jPanel1.add(btnPilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 90, 60));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("Total Harga");
-        panelUtama.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 200, -1, -1));
-        panelUtama.add(txtKodeBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 200, 130, 40));
-        panelUtama.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 190, 160, 40));
-        panelUtama.add(txtNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 130, 40));
-        panelUtama.add(txtJumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 100, 160, 40));
-        panelUtama.add(txtSatuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 130, 40));
-        panelUtama.add(txtHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 130, 40));
-        panelUtama.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 126, 40));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 200, -1, -1));
+        jPanel1.add(jDateChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 220, 50));
+        jPanel1.add(txtHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 100, 180, 60));
 
-        btnPilih.setText("Pilih");
-        panelUtama.add(btnPilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 120, 40));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setText("Kode Barang");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        jPanel1.add(txtJumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 100, 200, 60));
+        jPanel1.add(txtSatuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 180, 60));
+        jPanel1.add(txtNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 130, 60));
 
-        cmbSuplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suplier Pilih", " " }));
-        panelUtama.add(cmbSuplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 130, 40));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setText("Satuan");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 100, -1, -1));
 
+        btnBeli.setBackground(new java.awt.Color(51, 255, 51));
+        btnBeli.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnBeli.setText("Beli");
-        panelUtama.add(btnBeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 130, 40));
-        panelUtama.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 126, 40));
-        panelUtama.add(jDateChooser3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 126, 40));
+        jPanel1.add(btnBeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 460, 70));
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 200, 200, 60));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setText("Harga");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel9.setText("Tanggal");
-        panelUtama.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
-        cmbKapan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hari Ini", "7 Hari Terakhir", "1 Bulan Terakhir", "Tahun ini", " " }));
-        panelUtama.add(cmbKapan, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 130, 40));
+        panelUtama.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 1590, 380));
 
-        btnRefresh.setText("Refresh");
-        panelUtama.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 410, 130, 40));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tblBarang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,7 +137,45 @@ public class Pembelian extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblBarang);
 
-        panelUtama.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 1570, 390));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Sampai");
+
+        btnRefresh.setText("Refresh");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1552, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jLabel1)
+                .addGap(52, 52, 52)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+        );
+
+        panelUtama.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 1580, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -159,7 +198,6 @@ public class Pembelian extends javax.swing.JPanel {
     private javax.swing.JButton btnBeli;
     private javax.swing.JButton btnPilih;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JComboBox<String> cmbKapan;
     private javax.swing.JComboBox<String> cmbSuplier;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
@@ -173,6 +211,8 @@ public class Pembelian extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelUtama;
     private javax.swing.JTable tblBarang;

@@ -8,12 +8,12 @@ package kasir;
  *
  * @author yaniyan
  */
-public class LaporanTransaksi extends javax.swing.JPanel {
+public class KelolaKeuangan extends javax.swing.JPanel {
 
     /**
      * Creates new form LaporanTransaksi
      */
-    public LaporanTransaksi() {
+    public KelolaKeuangan() {
         initComponents();
     }
 
@@ -53,7 +53,7 @@ public class LaporanTransaksi extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(1740, 960));
 
         pnFormUser.setBackground(new java.awt.Color(255, 255, 255));
-        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnFormUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnFormUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jdcTanggal.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -99,7 +99,7 @@ public class LaporanTransaksi extends javax.swing.JPanel {
         pnFormUser.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 440, 90));
 
         pnDaftarUser.setBackground(new java.awt.Color(255, 255, 255));
-        pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnDaftarUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N

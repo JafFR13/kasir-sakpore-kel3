@@ -74,7 +74,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnBarang = new javax.swing.JButton();
         btnKeuangan = new javax.swing.JButton();
         btnPembelian = new javax.swing.JButton();
-        btnPembelian1 = new javax.swing.JButton();
+        btnSup = new javax.swing.JButton();
         navbar = new javax.swing.JPanel();
         lblTanggal = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -127,10 +127,10 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btnPembelian1.setText("KelolaSupplier");
-        btnPembelian1.addActionListener(new java.awt.event.ActionListener() {
+        btnSup.setText("KelolaSupplier");
+        btnSup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPembelian1ActionPerformed(evt);
+                btnSupActionPerformed(evt);
             }
         });
 
@@ -147,7 +147,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(btnBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                     .addComponent(btnKeuangan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                     .addComponent(btnPembelian, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(btnPembelian1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                    .addComponent(btnSup, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
                 .addContainerGap())
         );
         sidebarLayout.setVerticalGroup(
@@ -160,7 +160,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnKuser, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPembelian1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSup, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -177,7 +177,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblTanggal.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
         lblTanggal.setForeground(new java.awt.Color(255, 255, 255));
         lblTanggal.setText("Saturday, 99, December 2025 ");
-        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, 684, 63));
+        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 684, 63));
 
         jComboBox1.setBackground(new java.awt.Color(102, 102, 255));
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -241,20 +241,33 @@ panelUtama.removeAll();
     }//GEN-LAST:event_btnKasirActionPerformed
 
     private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBarangActionPerformed
+panelUtama.removeAll();                
+    KelolaBarang kbarang = new KelolaBarang();        
+    panelUtama.add(kbarang); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          }//GEN-LAST:event_btnBarangActionPerformed
 
     private void btnKeuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeuanganActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnKeuanganActionPerformed
+panelUtama.removeAll();                
+    KelolaKeuangan kuang = new KelolaKeuangan();        
+    panelUtama.add(kuang); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          }//GEN-LAST:event_btnKeuanganActionPerformed
 
     private void btnPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembelianActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPembelianActionPerformed
+panelUtama.removeAll();                
+    Pembelian kbeli = new Pembelian();        
+    panelUtama.add(kbeli); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          }//GEN-LAST:event_btnPembelianActionPerformed
 
-    private void btnPembelian1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembelian1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPembelian1ActionPerformed
+    private void btnSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupActionPerformed
+panelUtama.removeAll();                
+    Suplier ksup = new Suplier();        
+    panelUtama.add(ksup); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();      
+    }//GEN-LAST:event_btnSupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,7 +311,7 @@ panelUtama.removeAll();
     private javax.swing.JButton btnKeuangan;
     private javax.swing.JButton btnKuser;
     private javax.swing.JButton btnPembelian;
-    private javax.swing.JButton btnPembelian1;
+    private javax.swing.JButton btnSup;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblTanggal;
     private javax.swing.JPanel navbar;
