@@ -46,6 +46,7 @@ public class Pembelian extends javax.swing.JPanel {
         txtTotal = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btnBeli1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBarang = new javax.swing.JTable();
@@ -101,7 +102,7 @@ public class Pembelian extends javax.swing.JPanel {
         btnBeli.setBackground(new java.awt.Color(51, 255, 51));
         btnBeli.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnBeli.setText("Beli");
-        jPanel1.add(btnBeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 460, 70));
+        jPanel1.add(btnBeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 460, 70));
         jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 200, 200, 60));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -111,6 +112,11 @@ public class Pembelian extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel9.setText("Tanggal");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+
+        btnBeli1.setBackground(new java.awt.Color(51, 255, 51));
+        btnBeli1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnBeli1.setText("Beli");
+        jPanel1.add(btnBeli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 460, 70));
 
         panelUtama.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 1590, 380));
 
@@ -196,6 +202,7 @@ public class Pembelian extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBeli;
+    private javax.swing.JButton btnBeli1;
     private javax.swing.JButton btnPilih;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JComboBox<String> cmbSuplier;
