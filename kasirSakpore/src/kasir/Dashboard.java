@@ -82,11 +82,38 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD
+        panelBg.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        panelBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        navbar.setBackground(new java.awt.Color(153, 255, 153));
+        navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
+
+        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
+        navbar.setLayout(navbarLayout);
+        navbarLayout.setHorizontalGroup(
+            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1920, Short.MAX_VALUE)
+        );
+        navbarLayout.setVerticalGroup(
+            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+
+        panelBg.add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        sidebar.setBackground(new java.awt.Color(0, 204, 0));
+        sidebar.setPreferredSize(new java.awt.Dimension(150, 920));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+=======
         sidebar.setBackground(new java.awt.Color(252, 250, 246));
         sidebar.setPreferredSize(new java.awt.Dimension(1920, 150));
 
         btnAdmin.setText("AdminDashBoard");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminActionPerformed(evt);
             }
@@ -153,6 +180,19 @@ public class Dashboard extends javax.swing.JFrame {
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(235, 235, 235)
+                .addComponent(jButton1)
+                .addContainerGap(662, Short.MAX_VALUE))
+        );
+
+        panelBg.add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 162, -1, -1));
+
+        panelUtama.setBackground(new java.awt.Color(255, 204, 204));
+        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 920));
+        panelUtama.setLayout(new java.awt.BorderLayout());
+        panelBg.add(panelUtama, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 162, -1, -1));
+=======
                 .addGap(37, 37, 37)
                 .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -169,6 +209,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
 
         navbar.setBackground(new java.awt.Color(41, 56, 77));
         navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
@@ -215,6 +256,22 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  panelUtama.removeAll();
+
+    // Buat instance panel kasir
+    adminPanel kasirPanel = new adminPanel();
+
+    // Tambahkan panel kasir ke dalam panelUtama
+    panelUtama.setLayout(new BorderLayout());
+    panelUtama.add(kasirPanel, BorderLayout.CENTER);
+
+    // Refresh tampilannya
+    panelUtama.revalidate();
+    panelUtama.repaint();      // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+=======
     private void btnKuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKuserActionPerformed
  panelUtama.removeAll();                
     KelolaUser kuser = new KelolaUser();        
@@ -268,6 +325,7 @@ panelUtama.removeAll();
     panelUtama.revalidate();               
     panelUtama.repaint();      
     }//GEN-LAST:event_btnSupActionPerformed
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
 
     /**
      * @param args the command line arguments
