@@ -106,6 +106,7 @@ public class KelolaUser extends javax.swing.JPanel {
         btDelete = new javax.swing.JButton();
         btEdit = new javax.swing.JButton();
         Batal = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(1720, 960));
         setPreferredSize(new java.awt.Dimension(1720, 960));
@@ -230,6 +231,10 @@ public class KelolaUser extends javax.swing.JPanel {
         pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 1100, 740));
 
         add(pnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1720, 920));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel3.setText("Kelola User");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditActionPerformed
@@ -364,6 +369,7 @@ public class KelolaUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lPass;
     private javax.swing.JLabel lRole;
