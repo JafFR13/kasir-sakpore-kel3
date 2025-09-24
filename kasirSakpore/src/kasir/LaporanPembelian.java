@@ -35,7 +35,6 @@ public class LaporanPembelian extends javax.swing.JPanel {
         btnRefresh = new javax.swing.JButton();
         cmbFilter = new javax.swing.JComboBox<>();
         jdcSelesai = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPembelian = new javax.swing.JTable();
         btnDelete = new javax.swing.JButton();
@@ -75,10 +74,6 @@ public class LaporanPembelian extends javax.swing.JPanel {
         });
         jPanel1.add(cmbFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 160, 40));
         jPanel1.add(jdcSelesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 160, 40));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("Daftar Pembelian");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
         tblPembelian.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,7 +141,6 @@ public class LaporanPembelian extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

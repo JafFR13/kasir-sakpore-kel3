@@ -65,20 +65,22 @@ public class Dashboard extends javax.swing.JFrame {
         panelUtama.setLayout(new java.awt.BorderLayout());
 
         navbar.setBackground(new java.awt.Color(51, 51, 255));
+        navbar.setMinimumSize(new java.awt.Dimension(1980, 140));
         navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
         navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTanggal.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblTanggal.setText("WEDNESDAY 99, OKTOVER 2025");
-        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 840, 90));
+        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, 840, 90));
 
+        cmbLaporan.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         cmbLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih laporan", "laporan keuangan", "laporan penjualan", "laporan pembelian" }));
         cmbLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbLaporanActionPerformed(evt);
             }
         });
-        navbar.add(cmbLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 230, 40));
+        navbar.add(cmbLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 200, 40));
 
         sidebar.setBackground(new java.awt.Color(51, 51, 255));
         sidebar.setPreferredSize(new java.awt.Dimension(168, 960));
@@ -178,14 +180,16 @@ public class Dashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(186, 186, 186)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 1982, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1748, Short.MAX_VALUE)))
+                    .addContainerGap(1810, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -106,7 +106,7 @@ public class Suplier extends javax.swing.JPanel {
         lPass1.setText("Password :");
         pnFormUser1.add(lPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
-        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif/Tidak aktif" }));
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif", "Tidak aktif" }));
         pnFormUser1.add(cmbStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 220, 40));
 
         txtAlamat.addActionListener(new java.awt.event.ActionListener() {
