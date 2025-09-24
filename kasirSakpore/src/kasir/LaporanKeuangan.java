@@ -26,19 +26,112 @@ public class LaporanKeuangan extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelUtama = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jdc1 = new com.toedter.calendar.JDateChooser();
+        jdc = new com.toedter.calendar.JDateChooser();
+        jLabel2 = new javax.swing.JLabel();
+        cmbKapan = new javax.swing.JComboBox<>();
+        btnRefrresh = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnCetak = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
+        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
+        panelUtama.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("Laporan Keuangan");
+        panelUtama.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 29, -1, -1));
+        panelUtama.add(jdc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 140, 40));
+        panelUtama.add(jdc, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 160, 150, 40));
+
+        jLabel2.setText("Sampai");
+        panelUtama.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
+
+        cmbKapan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hari ini", "7 Hari Terakhir", "Bulan ini", "tahun ini", " " }));
+        panelUtama.add(cmbKapan, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, 180, 40));
+
+        btnRefrresh.setBackground(new java.awt.Color(0, 153, 153));
+        btnRefrresh.setText("Refresh");
+        panelUtama.add(btnRefrresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 140, 40));
+
+        btnEdit.setBackground(new java.awt.Color(255, 153, 51));
+        btnEdit.setText("Edit");
+        panelUtama.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 270, 130, 40));
+
+        btnDelete.setBackground(new java.awt.Color(255, 0, 51));
+        btnDelete.setText("Delete");
+        panelUtama.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 270, 130, 40));
+
+        btnCetak.setBackground(new java.awt.Color(51, 204, 255));
+        btnCetak.setText("Cetak");
+        panelUtama.add(btnCetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 270, 130, 40));
+
+        jLabel3.setText("Daftar Keuangan");
+        panelUtama.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Tanggal", "Jenis Keuangan", "Masuk", "Keluar", "Total"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        panelUtama.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 1460, 490));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCetak;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnRefrresh;
+    private javax.swing.JComboBox<String> cmbKapan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private com.toedter.calendar.JDateChooser jdc;
+    private com.toedter.calendar.JDateChooser jdc1;
+    private javax.swing.JPanel panelUtama;
     // End of variables declaration//GEN-END:variables
 }
