@@ -256,7 +256,7 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   panelUtama.removeAll();
 
@@ -271,7 +271,7 @@ public class Dashboard extends javax.swing.JFrame {
     panelUtama.revalidate();
     panelUtama.repaint();      // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-=======
+
     private void btnKuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKuserActionPerformed
  panelUtama.removeAll();                
     KelolaUser kuser = new KelolaUser();        
@@ -325,7 +325,6 @@ panelUtama.removeAll();
     panelUtama.revalidate();               
     panelUtama.repaint();      
     }//GEN-LAST:event_btnSupActionPerformed
->>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
 
     /**
      * @param args the command line arguments
