@@ -242,6 +242,11 @@ panelUtama.removeAll();
 
     private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
         // TODO add your handling code here:
+        panelUtama.removeAll();                
+    KelolaBarang barangP = new KelolaBarang();        
+    panelUtama.add(barangP); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();
     }//GEN-LAST:event_btnBarangActionPerformed
 
     private void btnKeuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeuanganActionPerformed
