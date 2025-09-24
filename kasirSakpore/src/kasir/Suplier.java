@@ -84,11 +84,11 @@ public class Suplier extends javax.swing.JPanel {
         btnEdit.setText("Edit");
         pnFormUser.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 170, 40));
 
-        jPanel1.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 1090, 740));
+        jPanel1.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 1090, 740));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         jLabel2.setText("Kelola Suplier");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         pnFormUser1.setBackground(new java.awt.Color(255, 255, 255));
         pnFormUser1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -138,7 +138,7 @@ public class Suplier extends javax.swing.JPanel {
         btnSimpan.setText("Simpan");
         pnFormUser1.add(btnSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 670, 250, 50));
 
-        jPanel1.add(pnFormUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 460, 740));
+        jPanel1.add(pnFormUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 460, 740));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

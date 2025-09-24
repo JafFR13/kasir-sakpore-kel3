@@ -72,10 +72,13 @@ public class LaporanKeuangan extends javax.swing.JPanel {
         panelUtama.add(btnCetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 270, 130, 40));
 
         jLabel3.setText("Daftar Keuangan");
-        panelUtama.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
+        panelUtama.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -100,7 +103,7 @@ public class LaporanKeuangan extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        panelUtama.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 1460, 490));
+        panelUtama.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 1460, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
