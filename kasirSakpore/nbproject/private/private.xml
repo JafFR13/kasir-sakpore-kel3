@@ -3,12 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/ForReal/TheMaze/kasir-sakpore-kel3/kasirSakpore/src/kasir/adminPanel.java</file>
             <file>file:/D:/ForReal/TheMaze/kasir-sakpore-kel3/kasirSakpore/src/kasir/LineChartPanel.java</file>
             <file>file:/D:/ForReal/TheMaze/kasir-sakpore-kel3/kasirSakpore/src/NewJFrame.java</file>
             <file>file:/D:/ForReal/TheMaze/kasir-sakpore-kel3/kasirSakpore/src/kasir/Dashboard.java</file>
             <file>file:/D:/ForReal/TheMaze/kasir-sakpore-kel3/kasirSakpore/src/kasir/koneksi.java</file>
             <file>file:/D:/ForReal/TheMaze/kasir-sakpore-kel3/kasirSakpore/src/loginForm.java</file>
+=======
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/Pembelian.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/Admin.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/Dashboard.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/LaporanTransaksi.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/KelolaUser.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/serah.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/KelolaBarang.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/LineChart.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/koneksi.java</file>
+            <file>file:/C:/Users/user/Documents/code/tugas%20web%201/WEB1-02-04/kasir-sakpore-kel3/kasirSakpore/src/kasir/Kasir.java</file>
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
         </group>
     </open-files>
 </project-private>

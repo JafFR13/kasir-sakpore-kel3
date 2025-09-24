@@ -3,22 +3,60 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package kasir;
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JPanel;
 
-import java.awt.BorderLayout;
-
-
-/**
- *
- * @author user
- */
 public class Dashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Dashboard
-     */
     public Dashboard() {
         initComponents();
+
+        // navbar gradasi navy (kiri) → biru muda (kanan)
+        applyGradient(navbar, new Color(0, 0, 128), new Color(0, 0, 200), true);
+
+        // sidebar gradasi ungu gelap (atas) → ungu muda (bawah)
+        applyGradient(sidebar, new Color(51, 0, 102), new Color(51, 0, 255), false);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy");
+    String tgl = sdf.format(new Date());
+    lblTanggal.setText(tgl);
     }
+
+    /**
+     * @param panel panel yang mau diwarnai
+     * @param c1 warna awal
+     * @param c2 warna akhir
+     * @param horizontal true = kiri→kanan, false = atas→bawah
+     */
+    private void applyGradient(JPanel panel, Color c1, Color c2, boolean horizontal) {
+        panel.setOpaque(false);
+        panel.setUI(new javax.swing.plaf.PanelUI() {
+            @Override
+            public void update(Graphics g, javax.swing.JComponent c) {
+                Graphics2D g2d = (Graphics2D) g;
+                int w = c.getWidth();
+                int h = c.getHeight();
+
+                GradientPaint gp;
+                if (horizontal) {
+                    gp = new GradientPaint(0, 0, c1, w, 0, c2); // kiri → kanan
+                } else {
+                    gp = new GradientPaint(0, 0, c1, 0, h, c2); // atas → bawah
+                }
+
+                g2d.setPaint(gp);
+                g2d.fillRect(0, 0, w, h);
+
+                super.update(g, c);
+            }
+        });
+    }
+
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,14 +67,22 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelBg = new javax.swing.JPanel();
-        navbar = new javax.swing.JPanel();
         sidebar = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnAdmin = new javax.swing.JButton();
+        btnKuser = new javax.swing.JButton();
+        btnKasir = new javax.swing.JButton();
+        btnBarang = new javax.swing.JButton();
+        btnKeuangan = new javax.swing.JButton();
+        btnPembelian = new javax.swing.JButton();
+        btnSup = new javax.swing.JButton();
+        navbar = new javax.swing.JPanel();
+        lblTanggal = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         panelUtama = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD
         panelBg.setPreferredSize(new java.awt.Dimension(1920, 1080));
         panelBg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -61,8 +107,57 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
+=======
+        sidebar.setBackground(new java.awt.Color(252, 250, 246));
+        sidebar.setPreferredSize(new java.awt.Dimension(1920, 150));
+
+        btnAdmin.setText("AdminDashBoard");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAdminActionPerformed(evt);
+            }
+        });
+
+        btnKuser.setText("KelolaUser");
+        btnKuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKuserActionPerformed(evt);
+            }
+        });
+
+        btnKasir.setText("Kasir");
+        btnKasir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKasirActionPerformed(evt);
+            }
+        });
+
+        btnBarang.setText("KelolaBarang");
+        btnBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBarangActionPerformed(evt);
+            }
+        });
+
+        btnKeuangan.setText("kelolaKeuangan");
+        btnKeuangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeuanganActionPerformed(evt);
+            }
+        });
+
+        btnPembelian.setText("PembelianBaang");
+        btnPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPembelianActionPerformed(evt);
+            }
+        });
+
+        btnSup.setText("KelolaSupplier");
+        btnSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupActionPerformed(evt);
             }
         });
 
@@ -71,13 +166,21 @@ public class Dashboard extends javax.swing.JFrame {
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jButton1)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKuser, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btnKasir, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btnBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btnKeuangan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btnPembelian, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(btnSup, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                .addContainerGap())
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(235, 235, 235)
                 .addComponent(jButton1)
                 .addContainerGap(662, Short.MAX_VALUE))
@@ -89,21 +192,71 @@ public class Dashboard extends javax.swing.JFrame {
         panelUtama.setPreferredSize(new java.awt.Dimension(1740, 920));
         panelUtama.setLayout(new java.awt.BorderLayout());
         panelBg.add(panelUtama, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 162, -1, -1));
+=======
+                .addGap(37, 37, 37)
+                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnKuser, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSup, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnKeuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
+
+        navbar.setBackground(new java.awt.Color(41, 56, 77));
+        navbar.setPreferredSize(new java.awt.Dimension(1920, 150));
+        navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTanggal.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 48)); // NOI18N
+        lblTanggal.setForeground(new java.awt.Color(255, 255, 255));
+        lblTanggal.setText("Saturday, 99, December 2025 ");
+        navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 684, 63));
+
+        jComboBox1.setBackground(new java.awt.Color(102, 102, 255));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jComboBox1.setMaximumRowCount(199);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Profil", "Log out" }));
+        navbar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 30, 170, 50));
+
+        panelUtama.setBackground(new java.awt.Color(255, 255, 255));
+        panelUtama.setPreferredSize(new java.awt.Dimension(1740, 960));
+        panelUtama.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(navbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelUtama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
+                    .addComponent(panelUtama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   panelUtama.removeAll();
 
@@ -118,6 +271,61 @@ public class Dashboard extends javax.swing.JFrame {
     panelUtama.revalidate();
     panelUtama.repaint();      // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+=======
+    private void btnKuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKuserActionPerformed
+ panelUtama.removeAll();                
+    KelolaUser kuser = new KelolaUser();        
+    panelUtama.add(kuser); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();           
+    }//GEN-LAST:event_btnKuserActionPerformed
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
+ panelUtama.removeAll();                
+    Admin adminPanel = new Admin();        
+    panelUtama.add(adminPanel); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          
+    }//GEN-LAST:event_btnAdminActionPerformed
+
+    private void btnKasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKasirActionPerformed
+panelUtama.removeAll();                
+    Kasir kasirP = new Kasir();        
+    panelUtama.add(kasirP); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();         
+
+    }//GEN-LAST:event_btnKasirActionPerformed
+
+    private void btnBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarangActionPerformed
+panelUtama.removeAll();                
+    KelolaBarang kbarang = new KelolaBarang();        
+    panelUtama.add(kbarang); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          }//GEN-LAST:event_btnBarangActionPerformed
+
+    private void btnKeuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeuanganActionPerformed
+panelUtama.removeAll();                
+    KelolaKeuangan kuang = new KelolaKeuangan();        
+    panelUtama.add(kuang); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          }//GEN-LAST:event_btnKeuanganActionPerformed
+
+    private void btnPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPembelianActionPerformed
+panelUtama.removeAll();                
+    Pembelian kbeli = new Pembelian();        
+    panelUtama.add(kbeli); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();          }//GEN-LAST:event_btnPembelianActionPerformed
+
+    private void btnSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupActionPerformed
+panelUtama.removeAll();                
+    Suplier ksup = new Suplier();        
+    panelUtama.add(ksup); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();      
+    }//GEN-LAST:event_btnSupActionPerformed
+>>>>>>> a5222d0d1b4c8e881b539027513ae509908221a2
 
     /**
      * @param args the command line arguments
@@ -155,9 +363,16 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAdmin;
+    private javax.swing.JButton btnBarang;
+    private javax.swing.JButton btnKasir;
+    private javax.swing.JButton btnKeuangan;
+    private javax.swing.JButton btnKuser;
+    private javax.swing.JButton btnPembelian;
+    private javax.swing.JButton btnSup;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel lblTanggal;
     private javax.swing.JPanel navbar;
-    private javax.swing.JPanel panelBg;
     private javax.swing.JPanel panelUtama;
     private javax.swing.JPanel sidebar;
     // End of variables declaration//GEN-END:variables
