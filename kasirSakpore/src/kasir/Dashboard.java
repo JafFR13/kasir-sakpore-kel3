@@ -47,6 +47,7 @@ public class Dashboard extends javax.swing.JFrame {
         panelUtama = new javax.swing.JPanel();
         navbar = new javax.swing.JPanel();
         lblTanggal = new javax.swing.JLabel();
+        cmbLaporan = new javax.swing.JComboBox<>();
         sidebar = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -70,6 +71,14 @@ public class Dashboard extends javax.swing.JFrame {
         lblTanggal.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblTanggal.setText("WEDNESDAY 99, OKTOVER 2025");
         navbar.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 40, 840, 90));
+
+        cmbLaporan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih laporan", "laporan keuangan", "laporan penjualan", "laporan pembelian" }));
+        cmbLaporan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLaporanActionPerformed(evt);
+            }
+        });
+        navbar.add(cmbLaporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 230, 40));
 
         sidebar.setBackground(new java.awt.Color(51, 51, 255));
         sidebar.setPreferredSize(new java.awt.Dimension(168, 960));
@@ -105,6 +114,11 @@ public class Dashboard extends javax.swing.JFrame {
         jButton5.setText("KELOLA KEUANGAN");
 
         jButton6.setText("KELOLA SUPPLIER");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("KASIR");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +215,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
  panelUtama.removeAll();                
     KelolaUser kuser = new KelolaUser();        
-    panelUtama.add(kuser); 
+    panelUtama.add(kuser, BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();           
              // TODO add your handling code here:
@@ -210,11 +224,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 panelUtama.removeAll();                
     Kasir kasirP = new Kasir(); 
-    
-    kasirP.setAlignmentX(Component.CENTER_ALIGNMENT);
-    kasirP.setAlignmentY(Component.CENTER_ALIGNMENT);
-
-    panelUtama.add(kasirP); 
+    panelUtama.add(kasirP,BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();         
         // TODO add your handling code here:
@@ -223,7 +233,7 @@ panelUtama.removeAll();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 panelUtama.removeAll();                
     KelolaBarang kbarang = new KelolaBarang();        
-    panelUtama.add(kbarang); 
+    panelUtama.add(kbarang,BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();             // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -231,7 +241,7 @@ panelUtama.removeAll();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 panelUtama.removeAll();                
     KelolaKeuangan kuang = new KelolaKeuangan();        
-    panelUtama.add(kuang); 
+    panelUtama.add(kuang,BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();          // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -239,11 +249,53 @@ panelUtama.removeAll();
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 panelUtama.removeAll();                
     Pembelian kbeli = new Pembelian();        
-    panelUtama.add(kbeli); 
+    panelUtama.add(kbeli,BorderLayout.CENTER); 
     panelUtama.revalidate();               
     panelUtama.repaint();                                                 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+panelUtama.removeAll();                
+    Suplier ksup = new Suplier();        
+    panelUtama.add(ksup,BorderLayout.CENTER); 
+    panelUtama.revalidate();               
+    panelUtama.repaint();                                                 
+               // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void cmbLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLaporanActionPerformed
+    String pilihan = (String) cmbLaporan.getSelectedItem();
+
+    panelUtama.removeAll(); // hapus isi lama
+
+    switch (pilihan) {
+       case "laporan keuangan":
+            LaporanKeuangan lk = new LaporanKeuangan();
+            panelUtama.add(lk, BorderLayout.CENTER);
+            break;
+
+        case "laporan pembelian":
+            LaporanPembelian lp = new LaporanPembelian();
+            panelUtama.add(lp, BorderLayout.CENTER);
+            break;
+
+        case "laporan penjualan":
+            LaporanPenjualan lpn = new LaporanPenjualan();
+            panelUtama.add(lpn, BorderLayout.CENTER);
+            break;
+
+
+
+        default:
+            panelUtama.add(new javax.swing.JLabel("Silakan pilih laporan"), BorderLayout.CENTER);
+    }
+
+    panelUtama.revalidate(); // refresh layout
+    panelUtama.repaint();    // redraw
+
+
+    }//GEN-LAST:event_cmbLaporanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,6 +333,7 @@ panelUtama.removeAll();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbLaporan;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

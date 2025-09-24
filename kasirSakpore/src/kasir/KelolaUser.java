@@ -172,7 +172,7 @@ public class KelolaUser extends javax.swing.JPanel {
         jLabel10.setText("Form User");
         pnFormUser.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        pnback.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 460, 740));
+        pnback.add(pnFormUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 460, 740));
 
         pnDaftarUser.setBackground(new java.awt.Color(255, 255, 255));
         pnDaftarUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -228,7 +228,7 @@ public class KelolaUser extends javax.swing.JPanel {
         });
         pnDaftarUser.add(Batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, 90, 40));
 
-        pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 1100, 740));
+        pnback.add(pnDaftarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 1100, 740));
 
         add(pnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1720, 920));
 
