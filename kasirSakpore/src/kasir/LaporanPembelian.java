@@ -26,19 +26,132 @@ public class LaporanPembelian extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jdcMulai = new com.toedter.calendar.JDateChooser();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btnRefresh = new javax.swing.JButton();
+        cmbFilter = new javax.swing.JComboBox<>();
+        jdcSelesai = new com.toedter.calendar.JDateChooser();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblPembelian = new javax.swing.JTable();
+        btnDelete = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnCetak = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1740, 960));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Laporan Pembelian");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Mulai");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 40));
+        jPanel1.add(jdcMulai, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 160, 40));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("/");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 115, 20, 30));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("Selesai");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, 40));
+
+        btnRefresh.setBackground(new java.awt.Color(0, 153, 153));
+        btnRefresh.setText("Refresh");
+        jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 130, 40));
+
+        cmbFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hari ini", "Kemaren", "7 hari lalu", "1 bulan lalu", "Tahun ini" }));
+        cmbFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbFilterActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 160, 40));
+        jPanel1.add(jdcSelesai, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 160, 40));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("Daftar Pembelian");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+
+        tblPembelian.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Tanggal", "Kode Barang", "Nama Kasir", "Supplier", "Satuan", "Harga", "Jumlah", "Total Harga", "Stok"
+            }
+        ));
+        jScrollPane1.setViewportView(tblPembelian);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 1630, 610));
+
+        btnDelete.setBackground(new java.awt.Color(160, 0, 0));
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 240, 140, 40));
+
+        btnEdit.setBackground(new java.awt.Color(255, 255, 0));
+        btnEdit.setText("Edit");
+        jPanel1.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 240, 140, 40));
+
+        btnCetak.setBackground(new java.awt.Color(0, 102, 102));
+        btnCetak.setForeground(new java.awt.Color(255, 255, 255));
+        btnCetak.setText("Cetak");
+        jPanel1.add(btnCetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 240, 140, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("Daftar Pembelian");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFilterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbFilterActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCetak;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnRefresh;
+    private javax.swing.JComboBox<String> cmbFilter;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser jdcMulai;
+    private com.toedter.calendar.JDateChooser jdcSelesai;
+    private javax.swing.JTable tblPembelian;
     // End of variables declaration//GEN-END:variables
 }
